@@ -1,0 +1,14 @@
+<h1>Latest Questions</h1>
+
+<ul>
+    <% @questions.each do |question| %>
+      <li>
+        <strong><%=question.title %></strong>
+        <br>
+        <%=question.body %>
+        <%= link_to "Show", question_path(question) %>
+      </li>
+    <% end %>
+</ul>
+
+<%= link_to "Add a new question", new_question_path %>

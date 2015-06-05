@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+questions = Question.create([
+  {title: "Why is it called rails?", body: "I'm wondering why Rails is called rails. Does anyone have any ideas on this?"},
+  {title: "Why is it called rails?", body: "I'm wondering why Rails is called rails. Does anyone have any ideas on this?"},
+  {title: "Why is it called rails?", body: "I'm wondering why Rails is called rails. Does anyone have any ideas on this?"},
+   ])

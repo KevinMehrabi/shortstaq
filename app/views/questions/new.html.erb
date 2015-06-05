@@ -1,0 +1,20 @@
+<h1>Ask a new question</h1>
+
+<%= form_for @question do |f| %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_field :body%>
+  </div>
+
+  <%= f. submit "Submit this question" %>
+
+
+<% end %>
+
+<%= link_to "Go back to the list", questions_path %>
