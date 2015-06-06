@@ -1,22 +1,46 @@
+<br>
+<br>
+
+
+<div class="form-group">
+    <h2>Sign Up</h2>
+    <form>
+    <label>First Name</label>
+    <input type="text" name="firstname" class="span3">
+    <label>Last Name</label>
+    <input type="text" name="lastname" class="span3">
+    <label>Email Address</label>
+    <input type="email" name="email" class="span3">
+    <label>Username</label>
+    <input type="text" name="username" class="span3">
+    <label>Password</label>
+    <input type="password" name="password" class="span3">
+    <label><input type="checkbox" name="terms"> I agree with the <a href="#">Terms and Conditions</a>.</label>
+    <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+    <div class="clearfix"></div>
+    </form>
+</div>
+
+
 <h1>Sign Up</h1>
 <%= form_for @user do |x| %>
-  <div>
+  <div class= "form-group">
     <%= x.label :name %>
     <%= x.text_field :name %>
   </div>
-  <div>
+  <div class= "form-group">
     <%= x.label :email %>
     <%= x.text_field :email %>
   </div>
-  <div>
+  <div class= "form-group">
     <%= x.label :password %>
     <%= x.password_field :password %>
   </div>
-  <div>
+  <div class= "form-group">
     <%= x.label :password_confirmation %>
     <%= x.password_field :password_confirmation %>
   </div>
-  <div>
-    <%= x.submit %>
+  <div class= "form group">
+    <%= x.submit class: "btn btn-default"%>
   </div>
 <% end %>
