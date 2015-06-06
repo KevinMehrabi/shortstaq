@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all
+    @questions = Question.all.order("created_at DESC")
   end
 
   def show
@@ -17,7 +17,6 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(params.require(:question).permit(:title, :body))
     @question.user_id = session[:user_id]
-
       if @question.save
         redirect_to questions_path
       else
