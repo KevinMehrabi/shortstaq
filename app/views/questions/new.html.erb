@@ -1,16 +1,18 @@
+
 <h1>Ask a new question</h1>
 
 <%= form_for @question do |f| %>
 
   <div>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :maxlength => "50" %>
   </div>
 
   <div>
     <%= f.label :body %>
-    <%= f.text_field :body%>
+    <%= f.text_field :body, :maxlength => "200" %>
   </div>
+  <%= flash[:notice] %>
 
   <%= f. submit "Submit this question" %>
 
