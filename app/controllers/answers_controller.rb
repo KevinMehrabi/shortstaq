@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
 
+
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.build(params.require(:answer).permit(:title, :body))
@@ -7,7 +8,8 @@ class AnswersController < ApplicationController
       if @answer.save
         redirect_to questions_path
       else
-        render :new
+        flash[:notice] = "Your answer is too long. It must be 200 characters max."
+        render :_form
       end
   end
 
