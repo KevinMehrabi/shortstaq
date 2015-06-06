@@ -2,6 +2,7 @@
 
 <%= answer.body %>
 
-<%= link_to 'Delete Answer', [answer.question, answer],
-            method: :delete,
-            data: { confirm: "are you sure you want to delete this?"}  %>
+
+<% if answer.user_id == current_user.id %>
+ <%= link_to "Destroy", question_answer_path(answer.question, answer), method: :delete, data: {confirm: "are you sure?"} %>
+      <% end %>

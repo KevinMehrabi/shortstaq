@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-
+include SessionsHelper
 
   def create
     @question = Question.find(params[:question_id])
@@ -17,6 +17,10 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(answer [:id])
     @answer.destroy
+    @user = Answer.find(params[:id]).user_id
+      if @user == current_user.id
+        @answer.destroy
+      end
     redirect_to questions_path
   end
 end
