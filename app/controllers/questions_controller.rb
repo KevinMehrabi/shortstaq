@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+include SessionsHelper
   def index
     @questions = Question.all.order("created_at DESC")
   end
@@ -44,7 +44,10 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    @question.destroy
+    @user = Question.find(params[:id]).user_id
+      if @user == current_user.id
+        @question.destroy
+      end
     redirect_to questions_path
   end
 
