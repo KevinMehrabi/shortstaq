@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
       if @question.save
         redirect_to questions_path
       else
-         flash[:notice] = "Either your title or your question is too long. Titles must be 50 characters max, and questions must be 200 characters maximum"
+         flash[:notice] = "Either your title or your question is too long. Titles must be 50 characters max, and questions must be 200 characters maximum."
          render :new
       end
   end
