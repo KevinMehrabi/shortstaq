@@ -46,6 +46,7 @@ include SessionsHelper
     @question = Question.find(params[:id])
     @user = Question.find(params[:id]).user_id
       if @user == current_user.id
+        @question.answers.destroy_all
         @question.destroy
       end
     redirect_to questions_path

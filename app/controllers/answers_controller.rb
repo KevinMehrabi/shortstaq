@@ -15,9 +15,8 @@ include SessionsHelper
 
 
   def destroy
-    @answer = Answer.find(answer [:id])
-    @answer.destroy
-    @user = Answer.find(params[:id]).user_id
+    @answer = Answer.find(params[:id])
+    @user = @answer.user_id
       if @user == current_user.id
         @answer.destroy
       end

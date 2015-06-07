@@ -9,6 +9,9 @@
 <p>
   <%= @question.body %>
 </p>
+<% if @question.user_id == current_user.id %>
+<%= link_to "Destroy", question_path(@question), method: :delete, data: {confirm: "are you sure?"} %>
+<% end %>
 
 <%= render @question.answers %>
 
