@@ -33,7 +33,7 @@ include SessionsHelper
 
   def update
     @question = Question.find(params[:id])
-
+    @user = Question.find(params[:id]).user_id
     if @question.update_attributes(params.require(:question).permit(:title,:body))
       redirect_to questions_path
     else
