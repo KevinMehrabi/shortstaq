@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+
+              </button>
+              <a class="navbar-brand" href="#" style="max-width:100px; margin-top: -7px;"
+                  src="assets/shortstaqlogo.png">
+              </a>
+          </div>
+
+
+          <% if current_user %>
+                Logged in as: <%= current_user.name %>
+                <%= link_to 'Log Out', logout_path, method: :delete %>
+
+          <% else %>
+              <%= form_for :login, url: login_path, :html => { :class => "navbar-form navbar-right"} do |x| %>
+                <div class="form-group">
+                  <%=x.text_field :email, class: "form-control",  placeholder: "Username" %>
+                </div>
+                <div class="form-group">
+                  <%=x.password_field :password, class: "form-control",  placeholder: "Password" %>
+                </div>
+                <div class="form-group">
+                  <%=x.submit 'Log In', class: "btn btn-default" %>
+                </div>
+              <% end %>
+        <% end %>
+
+        </div>
+  </div>
