@@ -8,7 +8,7 @@
         <strong><%=question.title %></strong>
         <br>
         <%= link_to "Show", question_path(question) %>
-        <% if question.user_id == current_user.id %>
+        <% if question.user_id == current_user %>
         <%= link_to "Destroy", question_path(question), method: :delete, data: {confirm: "are you sure?"} %>
         <% end %>
       </li>
