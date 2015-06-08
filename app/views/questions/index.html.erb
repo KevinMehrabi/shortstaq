@@ -1,27 +1,31 @@
 <br>
 <br>
-<h1>Latest Questions</h1>
-
 <ul>
-    <% @questions.each do |question| %>
-      <li class="container">
-        <div class="col-md-6 col-md-offset-3">
-          <h1 strong><%=question.title %></h1>
-            <p>
-              <%=question.body %>
-            </p>
-            <div>
-              <span class="badge"><%=question.created_at%></span>
-            </div>
-              <%= link_to "Show", question_path(question) %>
-              <% if question.user_id == current_user %>
-              <%= link_to "Destroy", question_path(question), method: :delete, data: {confirm: "are you sure?"} %>
-              <% end %>
-          </div>
-      </li>
-      <hr>
-    <% end %>
-</ul>
+  <li class="container">
+    <div class="col-md-6 col-md-offset-3">
 
-<%= link_to "Add a new question", new_question_path %>
-<br><br>
+          <h1>Latest Questions</h1>
+
+
+              <% @questions.each do |question| %>
+
+                    <h3 strong><%=question.title %></h3>
+                      <p>
+                        <%=question.body %>
+                      </p>
+                      <div>
+                        <span class="badge"><%=question.created_at%></span>
+                      </div>
+                        <%= link_to "Show", question_path(question) %>
+                        <% if question.user_id == current_user %>
+                        <%= link_to "Destroy", question_path(question), method: :delete, data: {confirm: "are you sure?"} %>
+                        <% end %>
+
+                <hr>
+              <% end %>
+
+          <%= link_to "Add a new question", new_question_path %>
+        <br><br>
+    </div>
+  </li>
+</ul>

@@ -1,22 +1,29 @@
 <br><br>
 <h1>Ask a new question</h1>
 
-<%= form_for @question do |f| %>
+<ul class="container">
+  <div class="col-md-6 col-md-offset-3">
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, :maxlength => "50", :placeholder => "Your title must be 50 characters max!" %>
+      <%= form_for @question do |f| %>
+
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title, :maxlength => "50", :placeholder => "Your title must be 50 characters max!" %>
+        </div>
+
+        <div>
+          <%= f.label :body %>
+          <%= f.text_field :body, :maxlength => "200", :placeholder => "Your question must be 200 characters max!" %>
+        </div>
+        <%= flash[:notice] %>
+
+        <%= f. submit "Submit this question" %>
+
+
+      <% end %>
+
+      <%= link_to "Go back to the list", questions_path %>
+
   </div>
 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_field :body, :maxlength => "200", :placeholder => "Your question must be 200 characters max!" %>
-  </div>
-  <%= flash[:notice] %>
-
-  <%= f. submit "Submit this question" %>
-
-
-<% end %>
-
-<%= link_to "Go back to the list", questions_path %>
+</ul>
