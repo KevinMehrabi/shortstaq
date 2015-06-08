@@ -1,19 +1,29 @@
-<h1>Edit this question</h1>
+<br>
+<br>
+<ul>
+  <li class="container">
+    <div class="col-md-6 col-md-offset-3">
 
-<%= form_for @question do |f| %>
+        <h1>Edit this question</h1>
 
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+          <%= form_for @question do |f| %>
 
-  <div>
-    <%= f.label :body %>
-    <%= f.text_field :body%>
-  </div>
+              <div>
+                <%= f.label :title %>
+                <%= f.text_field :title %>
+              </div>
 
-  <%= f. submit "Submit these changes" %>
+              <div>
+                <%= f.label :body %>
+                <%= f.text_field :body%>
+              </div>
 
-<% end %>
+            <%= f. submit "Submit these changes" %>
 
-<%= link_to "Go back to the list", questions_path %>
+          <% end %>
+
+        <%= link_to "Go back to the list", questions_path %>
+
+    </div>
+  </li>
+</ul>
