@@ -6,6 +6,6 @@
    </li>
 </div>
 
-<% if answer.user_id == current_user.id %>
+<% if answer.user_id == current_user %>
  <%= link_to "Destroy", question_answer_path(answer.question, answer), method: :delete, data: {confirm: "are you sure?"} %>
   <% end %>

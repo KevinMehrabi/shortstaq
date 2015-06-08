@@ -1,7 +1,7 @@
 <%= form_for ([@question, @question.answers.build]) do |f| %>
   <p>
     <%= f.label :body %>
-    <%= f.text_area :body, :maxlength => "200" %>
+    <%= f.text_area :body, :maxlength => "200", :placeholder => "Your answer must be 200 characters max!" %>
   </p>
   <p>
     <%= f.submit %>
