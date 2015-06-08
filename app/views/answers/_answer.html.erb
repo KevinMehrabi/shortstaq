@@ -1,8 +1,11 @@
-<%= answer.user.name if answer.user %>
 
-<%= answer.body %>
-
+<div class="container">
+  <strong><%= answer.user.name if answer.user %></strong>
+    <li>
+      <%= answer.body %>
+   </li>
+</div>
 
 <% if answer.user_id == current_user.id %>
  <%= link_to "Destroy", question_answer_path(answer.question, answer), method: :delete, data: {confirm: "are you sure?"} %>
-      <% end %>
+  <% end %>
