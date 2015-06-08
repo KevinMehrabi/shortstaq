@@ -4,9 +4,8 @@
               <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
 
               </button>
-              <a class="navbar-brand" href="#" style="max-width:100px; margin-top: -7px;"
-                  src="assets/shortstaqlogo.png">
-              </a>
+            <%=  image_tag("shortstaqlogo.png") %>
+
           </div>
 
 
@@ -23,9 +22,14 @@
                   <%=x.password_field :password, class: "form-control",  placeholder: "Password" %>
                 </div>
                 <div class="form-group">
-                  <%=x.submit 'Log In', class: "btn btn-default" %>
+                  <%=x.submit 'Log In', class: "btn btn-default btn-success" %>
+                  <%= link_to 'Sign Up', new_user_path, class: "btn btn-default btn-primary" %>
                 </div>
+                <!-- <div>
+                  <button type="button" class="btn btn-default navbar-btn">Sign up</button>
+                </div> -->
               <% end %>
+
         <% end %>
 
         </div>
